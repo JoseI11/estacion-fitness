@@ -17,12 +17,24 @@ function App() {
         </div>
       </header>
 
-      <section className="min-h-screen flex items-center justify-center pt-40 sm:pt-44 md:pt-48 pb-16 px-6 animate-fadeIn">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+      <section
+        className="relative min-h-screen flex items-center justify-center px-6"
+        style={{
+          backgroundImage: "url('/wmremove-transformed.jpeg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* Content */}
+        <div className="relative z-10 text-center max-w-4xl mx-auto animate-fadeIn pt-32">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white drop-shadow-lg">
             Entrená con nosotros
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-12">
+          <p className="text-xl md:text-2xl text-gray-200 mb-12 drop-shadow">
             Planes flexibles · Horarios amplios
           </p>
           <a
@@ -37,13 +49,27 @@ function App() {
       </section>
 
       <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-3xl mx-auto text-center animate-fadeIn">
-          <div className="flex justify-center mb-6">
-            <Dumbbell className="w-12 h-12 text-[#5DD9D2]" />
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+            {/* Image */}
+            <div className="w-full md:w-1/2 flex-shrink-0">
+              <img
+                src="/sobrenosotros.webp"
+                alt="Entrenamiento en Estudio Fitness"
+                className="w-full h-72 md:h-[420px] object-cover rounded-3xl shadow-2xl shadow-black/60"
+              />
+            </div>
+            {/* Text */}
+            <div className="w-full md:w-1/2 text-center md:text-left animate-fadeIn">
+              <div className="flex justify-center md:justify-start mb-6">
+                <Dumbbell className="w-10 h-10 text-[#5DD9D2]" />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre nosotros</h2>
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+                En Estudio Fitness ofrecemos un espacio cómodo para entrenar, con acompañamiento y horarios amplios.
+              </p>
+            </div>
           </div>
-          <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-            En Estudio Fitness ofrecemos un espacio cómodo para entrenar, con acompañamiento y horarios amplios.
-          </p>
         </div>
       </section>
 
@@ -59,14 +85,17 @@ function App() {
       </section>
 
       <section className="py-20 px-6 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <Clock className="w-12 h-12 text-[#5DD9D2]" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">Horarios</h2>
-          <div className="space-y-4 text-xl md:text-2xl text-gray-300">
-            <p>Lunes a viernes: 8 a 22 hs</p>
-            <p>Sábados: 9 a 14 hs</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12">Horarios de clases</h2>
+          <div className="overflow-hidden rounded-3xl shadow-2xl shadow-black/60">
+            <img
+              src="/horarios.png"
+              alt="Horarios de clases Estudio Fitness"
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </section>
@@ -79,7 +108,7 @@ function App() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Ubicación</h2>
           <div className="bg-gray-900 rounded-2xl p-8 mb-8">
             <p className="text-xl text-gray-300 text-center">
-              Av. Principal 1234, Ciudad Autónoma de Buenos Aires
+              Dante Alghieri 715, Rafaela
             </p>
           </div>
           <div className="bg-gray-800 rounded-2xl h-64 md:h-96 flex items-center justify-center">
