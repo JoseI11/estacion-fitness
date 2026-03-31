@@ -1,4 +1,5 @@
 import { MessageCircle, Clock, MapPin, Dumbbell } from 'lucide-react';
+import ScheduleTable from './components/ScheduleTable';
 
 function App() {
   const whatsappNumber = '5491112345678';
@@ -32,19 +33,29 @@ function App() {
         {/* Content */}
         <div className="relative z-10 text-center max-w-4xl mx-auto animate-fadeIn pt-32">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white drop-shadow-lg">
-            Entrená con nosotros
+            Entrená en Estudio Fitness en Rafaela
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 drop-shadow">
             Planes flexibles · Horarios amplios
           </p>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Consultar por WhatsApp
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Consultar por WhatsApp
+            </a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdtpcfoRnSXF1GhxsTrElYOwa-xjndvJfL2YdNJioV8WH_Myg/viewform?usp=dialog"
+              className="inline-block bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Inscribirse
+            </a>
+          </div>
         </div>
       </section>
 
@@ -90,13 +101,7 @@ function App() {
             <Clock className="w-12 h-12 text-[#5DD9D2]" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-12">Horarios de clases</h2>
-          <div className="overflow-hidden rounded-3xl shadow-2xl shadow-black/60">
-            <img
-              src="/horarios.png"
-              alt="Horarios de clases Estudio Fitness"
-              className="w-full h-auto object-contain"
-            />
-          </div>
+          <ScheduleTable />
         </div>
       </section>
 
@@ -111,11 +116,17 @@ function App() {
               Dante Alghieri 715, Rafaela
             </p>
           </div>
-          <div className="bg-gray-800 rounded-2xl h-64 md:h-96 flex items-center justify-center">
-            <div className="text-center text-gray-500">
-              <MapPin className="w-16 h-16 mx-auto mb-4 opacity-50" />
-              <p className="text-lg">Mapa interactivo</p>
-            </div>
+          <div className="overflow-hidden rounded-2xl h-64 md:h-96 shadow-xl shadow-black/50">
+            <iframe
+              title="Ubicación Estudio Fitness"
+              src="https://maps.google.com/maps?q=Dante+Alghieri+715,+Rafaela,+Santa+Fe,+Argentina&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
@@ -133,6 +144,21 @@ function App() {
             className="inline-block bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-10 py-5 rounded-full text-xl transition-all duration-300 transform hover:scale-105"
           >
             Escribinos por WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <section id="inscripcion" className="py-32 px-6 bg-black">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8">Inscripción</h2>
+          <p className="text-xl text-gray-400 mb-12">
+            Completá tu inscripción y comenzá a entrenar hoy mismo
+          </p>
+          <a
+            href="#inscripcion"
+            className="inline-block bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-10 py-5 rounded-full text-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Inscribirse
           </a>
         </div>
       </section>
