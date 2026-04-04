@@ -4,12 +4,12 @@ import ScheduleTable from '../components/ScheduleTable';
 import { usePrices } from '../hooks/usePrices';
 
 const whatsappNumber = '5491112345678';
-const whatsappMessage = encodeURIComponent('Hola! Me gustaría consultar sobre los planes de Estudio Fitness');
+const whatsappMessage = encodeURIComponent('Hola! Me gustaría consultar sobre los planes de Estación Fitness');
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
 export default function Home() {
   useEffect(() => {
-    document.title = 'Estudio Fitness - Entrená en Rafaela';
+    document.title = 'Estación Fitness - Entrená en Rafaela';
   }, []);
 
   const { plans, loading: pricesLoading } = usePrices();
@@ -33,7 +33,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center max-w-4xl mx-auto animate-fadeIn pt-32">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white drop-shadow-lg">
-            Entrená en Estudio Fitness en Rafaela
+            Entrená en Estación Fitness en Rafaela
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 drop-shadow">
             Planes flexibles · Horarios amplios
@@ -66,7 +66,7 @@ export default function Home() {
             <div className="w-full md:w-1/2 flex-shrink-0">
               <img
                 src="/sobrenosotros.webp"
-                alt="Entrenamiento en Estudio Fitness"
+                alt="Entrenamiento en Estación Fitness"
                 className="w-full h-72 md:h-[420px] object-cover rounded-3xl shadow-2xl shadow-black/60"
               />
             </div>
@@ -76,7 +76,7 @@ export default function Home() {
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre nosotros</h2>
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                En Estudio Fitness ofrecemos un espacio cómodo para entrenar, con acompañamiento y horarios amplios.
+                En Estación Fitness ofrecemos un espacio cómodo para entrenar, con acompañamiento y horarios amplios.
               </p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Home() {
           </div>
           <div className="overflow-hidden rounded-2xl h-64 md:h-96 shadow-xl shadow-black/50">
             <iframe
-              title="Ubicación Estudio Fitness"
+              title="Ubicación Estación Fitness"
               src="https://maps.google.com/maps?q=Dante+Alghieri+715,+Rafaela,+Santa+Fe,+Argentina&output=embed"
               width="100%"
               height="100%"
@@ -172,7 +172,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 px-6 bg-black border-t border-gray-800">
         <div className="max-w-6xl mx-auto text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Estudio Fitness. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Estación Fitness. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>

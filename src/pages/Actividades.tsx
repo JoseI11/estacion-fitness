@@ -12,7 +12,7 @@ const actividades: { nombre: string; descripcion: string; nivel: string }[] = [
 
 export default function Actividades() {
   useEffect(() => {
-    document.title = 'Actividades | Estudio Fitness';
+    document.title = 'Actividades | Estación Fitness';
   }, []);
 
   return (
@@ -28,7 +28,7 @@ export default function Actividades() {
 
         <h1 className="text-5xl md:text-6xl font-bold mb-4">Actividades</h1>
         <p className="text-xl text-gray-400 mb-16">
-          Descubrí todas las disciplinas que ofrecemos en Estudio Fitness.
+          Descubrí todas las disciplinas que ofrecemos en Estación Fitness.
         </p>
 
         {actividades.length > 0 ? (

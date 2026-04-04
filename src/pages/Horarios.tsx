@@ -5,7 +5,7 @@ import ScheduleTable from '../components/ScheduleTable';
 
 export default function Horarios() {
   useEffect(() => {
-    document.title = 'Horarios de Clases | Estudio Fitness';
+    document.title = 'Horarios de Clases | Estación Fitness';
   }, []);
 
   return (

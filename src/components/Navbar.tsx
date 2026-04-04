@@ -21,7 +21,7 @@ export default function Navbar() {
             <source srcSet="/553575470_18014144180788369_4726206880901932308_n.webp" type="image/webp" />
             <img
               src="/553575470_18014144180788369_4726206880901932308_n.jpg"
-              alt="Estudio Fitness Logo"
+              alt="Estación Fitness Logo"
               className="h-16 sm:h-20 object-contain"
             />
           </picture>

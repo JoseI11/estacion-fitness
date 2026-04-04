@@ -6,7 +6,7 @@ import Actividades from './pages/Actividades';
 import Profesores from './pages/Profesores';
 import Horarios from './pages/Horarios';
 
-const whatsappUrl = `https://wa.me/5491112345678?text=${encodeURIComponent('Hola! Me gustaria consultar sobre los planes de Estudio Fitness')}`;
+const whatsappUrl = `https://wa.me/5491112345678?text=${encodeURIComponent('Hola! Me gustaria consultar sobre los planes de Estación Fitness')}`;
 
 function App() {
   return (

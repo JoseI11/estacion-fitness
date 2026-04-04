@@ -10,7 +10,7 @@ const profesores: { nombre: string; especialidad: string; bio: string; foto: str
 
 export default function Profesores() {
   useEffect(() => {
-    document.title = 'Nuestro Equipo | Estudio Fitness';
+    document.title = 'Nuestro Equipo | Estación Fitness';
   }, []);
 
   return (
