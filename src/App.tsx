@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Actividades from './pages/Actividades';
 import Profesores from './pages/Profesores';
@@ -29,6 +30,9 @@ function App() {
       >
         <MessageCircle className="w-8 h-8" />
       </a>
+
+      {/* Footer global */}
+      <Footer />
     </BrowserRouter>
   );
 }
