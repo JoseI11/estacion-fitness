@@ -1,14 +1,7 @@
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-// TODO: Reemplazar con los datos reales de las actividades cuando la cliente los provea
-const actividades: { nombre: string; descripcion: string; nivel: string }[] = [
-  // Ejemplo de estructura esperada:
-  // { nombre: 'Funcional', descripcion: 'Entrenamiento funcional para todos los niveles.', nivel: 'Todos los niveles' },
-  // { nombre: 'Cross', descripcion: 'Alta intensidad con ejercicios variados.', nivel: 'Intermedio / Avanzado' },
-  // { nombre: 'Yoga', descripcion: 'Flexibilidad, equilibrio y relajación.', nivel: 'Todos los niveles' },
-];
+import { actividades } from '../data/actividades';
 
 export default function Actividades() {
   useEffect(() => {

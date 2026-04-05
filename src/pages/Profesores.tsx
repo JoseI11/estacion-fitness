@@ -1,12 +1,7 @@
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-// TODO: Reemplazar con los datos reales de los profesores cuando la cliente los provea
-const profesores: { nombre: string; especialidad: string; bio: string; foto: string }[] = [
-  // Ejemplo de estructura esperada:
-  // { nombre: 'Nombre Apellido', especialidad: 'Funcional & Cross', bio: 'Descripción breve del profe.', foto: '/profesores/nombre.jpg' },
-];
+import { profesores } from '../data/profesores';
 
 export default function Profesores() {
   useEffect(() => {
