@@ -1,23 +1,16 @@
 import { useEffect } from 'react';
 import { Clock, MapPin, Dumbbell, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { usePrices } from '../hooks/usePrices';
 import { actividades } from '../data/actividades';
 
-const whatsappNumber = '5491112345678';
-const whatsappMessage = encodeURIComponent('Hola! Me gustaría consultar sobre los planes de Estación Fitness');
+const whatsappNumber = '543764227809';
+const whatsappMessage = encodeURIComponent('Hola! Me gustaría consultar sobre más información de Estación Fitness');
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
 export default function Home() {
   useEffect(() => {
     document.title = 'Estación Fitness - Entrená en Rafaela';
   }, []);
-
-  const { plans, loading: pricesLoading } = usePrices();
-
-  function getPriceForPlan(planTitle: string) {
-    return plans.find((p) => p.title === planTitle)?.price;
-  }
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -103,10 +96,19 @@ export default function Home() {
             {actividades.slice(0, 4).map((actividad) => (
               <div
                 key={actividad.nombre}
-                className="bg-gray-800 rounded-2xl p-5 border border-gray-700 text-center"
+                className="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-[#5DD9D2] transition-colors duration-300 group"
               >
-                <p className="font-semibold text-lg">{actividad.nombre}</p>
-                <p className="text-sm text-[#5DD9D2] mt-1">{actividad.nivel}</p>
+                <div className="overflow-hidden h-32">
+                  <img
+                    src={actividad.imagen}
+                    alt={actividad.nombre}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <p className="font-semibold text-lg">{actividad.nombre}</p>
+                  <p className="text-sm text-[#5DD9D2] mt-1">{actividad.nivel}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -121,15 +123,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Planes */}
+      {/* Precios */}
       <section className="py-20 px-6 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Nuestros Planes</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <PlanCard title="Plan Mensual" price={getPriceForPlan('Plan Mensual')} loading={pricesLoading} />
-            <PlanCard title="Plan Semanal" featured price={getPriceForPlan('Plan Semanal')} loading={pricesLoading} />
-            <PlanCard title="Pase Diario" price={getPriceForPlan('Pase Diario')} loading={pricesLoading} />
-          </div>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Precios</h2>
+          <p className="text-xl text-gray-400 mb-10">
+            Tenemos planes para cada actividad y frecuencia. Consultá todas las opciones.
+          </p>
+          <Link
+            to="/precios"
+            className="inline-block bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+          >
+            Ver precios
+          </Link>
         </div>
       </section>
 
@@ -206,60 +212,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
-  );
-}
-
-interface PlanCardProps {
-  title: string;
-  featured?: boolean;
-  price?: string;
-  loading?: boolean;
-}
-
-function PlanCard({ title, featured = false, price, loading = false }: PlanCardProps) {
-  return (
-    <div className={`bg-gray-800 rounded-2xl p-8 transition-all duration-300 transform hover:scale-105 ${
-      featured ? 'ring-2 ring-[#5DD9D2] shadow-lg shadow-[#5DD9D2]/20' : ''
-    }`}>
-      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center">{title}</h3>
-
-      {/* Precio dinámico desde Google Sheets */}
-      <div className="text-center mb-6 min-h-[2.5rem] flex items-center justify-center">
-        {loading ? (
-          <div className="h-8 w-32 bg-gray-700 rounded-full animate-pulse" />
-        ) : price ? (
-          <span className="text-2xl font-bold text-[#5DD9D2]">{price}</span>
-        ) : null}
-      </div>
-      <ul className="space-y-4 text-gray-300 mb-8">
-        <li className="flex items-start">
-          <span className="text-[#5DD9D2] mr-2">✓</span>
-          <span>Acceso completo al gimnasio</span>
-        </li>
-        <li className="flex items-start">
-          <span className="text-[#5DD9D2] mr-2">✓</span>
-          <span>Acompañamiento personalizado</span>
-        </li>
-        <li className="flex items-start">
-          <span className="text-[#5DD9D2] mr-2">✓</span>
-          <span>Sin permanencia mínima</span>
-        </li>
-      </ul>
-      <div className="text-center">
-        <a
-          href={`https://wa.me/5491112345678?text=${encodeURIComponent(`Hola! Me gustaría consultar sobre el ${title}`)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-block w-full py-3 rounded-full font-semibold transition-all duration-300 ${
-            featured
-              ? 'bg-[#5DD9D2] text-black hover:bg-[#4EC9C2]'
-              : 'bg-gray-700 text-white hover:bg-gray-600'
-          }`}
-        >
-          Consultar
-        </a>
-      </div>
     </div>
   );
 }

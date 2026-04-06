@@ -29,13 +29,22 @@ export default function Actividades() {
             {actividades.map((actividad) => (
               <div
                 key={actividad.nombre}
-                className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-[#5DD9D2] transition-colors duration-300"
+                className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-[#5DD9D2] transition-colors duration-300 group"
               >
-                <h2 className="text-2xl font-bold mb-3">{actividad.nombre}</h2>
-                <p className="text-gray-400 mb-4">{actividad.descripcion}</p>
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#5DD9D2]">
-                  {actividad.nivel}
-                </span>
+                <div className="overflow-hidden h-52">
+                  <img
+                    src={actividad.imagen}
+                    alt={actividad.nombre}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h2 className="text-2xl font-bold mb-3">{actividad.nombre}</h2>
+                  <p className="text-gray-400 mb-4">{actividad.descripcion}</p>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#5DD9D2]">
+                    {actividad.nivel}
+                  </span>
+                </div>
               </div>
             ))}
           </div>

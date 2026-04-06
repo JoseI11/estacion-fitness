@@ -4,6 +4,7 @@ export interface Actividad {
   nombre: string;
   descripcion: string;
   nivel: string;
+  imagen: string;
 }
 
 export const actividades: Actividad[] = [
@@ -11,40 +12,36 @@ export const actividades: Actividad[] = [
     nombre: 'Funcional',
     descripcion: 'Entrenamiento con el peso corporal y materiales variados. Mejorá tu fuerza, coordinación y resistencia en cada clase.',
     nivel: 'Todos los niveles',
+    imagen: '/actividades/funcional.webp',
   },
   {
-    nombre: 'CrossFit',
+    nombre: 'Cross',
     descripcion: 'Circuitos de alta intensidad que combinan levantamiento olímpico, gimnasia y cardio. Resultados rápidos y medibles.',
     nivel: 'Intermedio / Avanzado',
+    imagen: '/actividades/cross.webp',
   },
   {
     nombre: 'Yoga',
     descripcion: 'Trabajá la flexibilidad, el equilibrio y la respiración consciente. Ideal para complementar cualquier entrenamiento.',
     nivel: 'Todos los niveles',
+    imagen: '/actividades/yoga.webp',
   },
   {
-    nombre: 'Zumba',
+    nombre: 'Baile Fit',
     descripcion: 'Clases de baile con ritmos latinos y urbanos. Quemá calorías mientras te divertís al ritmo de la música.',
     nivel: 'Todos los niveles',
+    imagen: '/actividades/baile-fit.webp',
   },
   {
-    nombre: 'Musculación',
-    descripcion: 'Sala de pesas equipada con acompañamiento profesional. Diseñá tu rutina según tus objetivos con el apoyo de nuestros entrenadores.',
+    nombre: 'Jumping',
+    descripcion: 'Saltá al ritmo de la música sobre mini trampolines. Una clase divertida, de bajo impacto y alto rendimiento cardiovascular.',
     nivel: 'Todos los niveles',
+    imagen: '/actividades/jumping.webp',
   },
   {
-    nombre: 'Boxeo',
-    descripcion: 'Técnica, potencia y acondicionamiento físico. Aprendé las bases del boxeo en un ambiente dinámico y motivador.',
-    nivel: 'Principiante / Intermedio',
-  },
-  {
-    nombre: 'Pilates',
-    descripcion: 'Fortalecé el core, mejorá la postura y ganá conciencia corporal. Clases reducidas para una atención más personalizada.',
+    nombre: 'Personalizado',
+    descripcion: 'Entrenamiento adaptado a tus objetivos específicos con seguimiento individual. La opción ideal para resultados concretos.',
     nivel: 'Todos los niveles',
-  },
-  {
-    nombre: 'Stretching',
-    descripcion: 'Sesiones enfocadas en elongación muscular y movilidad articular. Perfectas para recuperación activa o como clase independiente.',
-    nivel: 'Todos los niveles',
+    imagen: '/actividades/personalizado.webp',
   },
 ];

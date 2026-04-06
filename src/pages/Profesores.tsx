@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, UserCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { profesores } from '../data/profesores';
 
@@ -24,33 +24,32 @@ export default function Profesores() {
           Conocé a los profesionales que te van a acompañar en cada entrenamiento.
         </p>
 
-        {profesores.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {profesores.map((profe) => (
-              <div
-                key={profe.nombre}
-                className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-[#5DD9D2] transition-colors duration-300"
-              >
-                <img
-                  src={profe.foto}
-                  alt={profe.nombre}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
-                  <h2 className="text-2xl font-bold mb-1">{profe.nombre}</h2>
-                  <span className="text-sm font-semibold uppercase tracking-wider text-[#5DD9D2] block mb-3">
-                    {profe.especialidad}
-                  </span>
-                  <p className="text-gray-400">{profe.bio}</p>
-                </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10">
+          {profesores.map((profe) => (
+            <Link
+              key={profe.slug}
+              to={`/profesores/${profe.slug}`}
+              className="flex flex-col items-center gap-4 group"
+            >
+              <div className="relative w-36 h-36 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-gray-700 group-hover:ring-[#5DD9D2] transition-all duration-300">
+                {profe.foto ? (
+                  <img
+                    src={profe.foto}
+                    alt={profe.nombre}
+                    className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-800 flex items-center justify-center">
+                    <UserCircle2 className="w-20 h-20 text-gray-600" />
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-24 text-gray-600">
-            <p className="text-lg">Contenido próximamente.</p>
-          </div>
-        )}
+              <p className="text-sm font-bold uppercase tracking-widest text-center text-gray-200 group-hover:text-[#5DD9D2] transition-colors duration-300">
+                {profe.nombre}
+              </p>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

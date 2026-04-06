@@ -7,6 +7,7 @@ const navLinks = [
   { to: '/actividades', label: 'Actividades' },
   { to: '/profesores', label: 'Profesores' },
   { to: '/horarios', label: 'Horarios' },
+  { to: '/precios', label: 'Precios' },
 ];
 
 export default function Navbar() {

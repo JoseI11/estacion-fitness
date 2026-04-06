@@ -1,5 +1,17 @@
 const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
+const funcionalLibreSchedule = [
+  { time: '6:30',   classes: ['', 'Funcional', '', 'Funcional', ''] },
+  { time: '7:30',   classes: ['Funcional', 'Funcional', 'Funcional', 'Funcional', 'Funcional'] },
+  { time: '9:00',   classes: ['Funcional', 'Funcional', 'Funcional', 'Funcional', 'Funcional'] },
+  { time: '13:00',  classes: ['', 'Funcional', '', 'Funcional', ''] },
+  { time: '15:00',  classes: ['', 'Funcional', '', 'Funcional', ''] },
+  { time: '16:00',  classes: ['Funcional', 'Funcional', 'Funcional', 'Funcional', 'Funcional'] },
+  { time: '17:00',  classes: ['Funcional', '', 'Funcional', '', 'Funcional'] },
+  { time: '19:00',  classes: ['Funcional', 'Funcional', 'Funcional', 'Funcional', ''] },
+  { time: '20:00',  classes: ['Funcional', '', 'Funcional', '', ''] },
+];
+
 const morningSchedule = [
   { time: '6:00 a 11:00', classes: ['Personalizado', 'Personalizado', 'Personalizado', 'Personalizado', 'Personalizado'] },
   { time: '6:30',         classes: ['', 'Funcional', '', 'Funcional', ''] },
@@ -72,9 +84,18 @@ function ScheduleBlock({ rows }: { rows: { time: string; classes: string[] }[] }
 
 export default function ScheduleTable() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <ScheduleBlock rows={morningSchedule} />
       <ScheduleBlock rows={afternoonSchedule} />
+
+      <div className="space-y-4">
+        <div className="text-center py-4 rounded-2xl bg-black border border-[#5DD9D2]/40">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-widest text-[#5DD9D2] uppercase">
+            Funcional Libre
+          </h2>
+        </div>
+        <ScheduleBlock rows={funcionalLibreSchedule} />
+      </div>
     </div>
   );
 }

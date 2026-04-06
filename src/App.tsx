@@ -5,7 +5,9 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Actividades from './pages/Actividades';
 import Profesores from './pages/Profesores';
+import ProfesorDetalle from './pages/ProfesorDetalle';
 import Horarios from './pages/Horarios';
+import Precios from './pages/Precios';
 
 const whatsappUrl = `https://wa.me/5491112345678?text=${encodeURIComponent('Hola! Me gustaria consultar sobre los planes de Estación Fitness')}`;
 
@@ -17,7 +19,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/actividades" element={<Actividades />} />
         <Route path="/profesores" element={<Profesores />} />
+        <Route path="/profesores/:slug" element={<ProfesorDetalle />} />
         <Route path="/horarios" element={<Horarios />} />
+        <Route path="/precios" element={<Precios />} />
       </Routes>
 
       {/* Boton flotante de WhatsApp — visible en todas las paginas */}
