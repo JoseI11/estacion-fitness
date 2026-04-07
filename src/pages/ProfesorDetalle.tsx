@@ -46,7 +46,7 @@ export default function ProfesorDetalle() {
               <img
                 src={profe.foto}
                 alt={profe.nombre}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover${profe.fotoPosition ? ` object-${profe.fotoPosition}` : ''}`}
               />
             ) : (
               <div className="w-full h-full bg-gray-800 flex items-center justify-center">

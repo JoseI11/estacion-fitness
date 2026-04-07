@@ -36,7 +36,7 @@ export default function Profesores() {
                   <img
                     src={profe.foto}
                     alt={profe.nombre}
-                    className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-500"
+                    className={`w-full h-full object-cover group-hover:scale-125 transition-transform duration-500${profe.fotoPosition ? ` object-${profe.fotoPosition}` : ''}`}
                   />
                 ) : (
                   <div className="w-full h-full bg-gray-800 flex items-center justify-center">
