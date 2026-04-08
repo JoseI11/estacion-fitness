@@ -8,6 +8,7 @@ export interface PrecioFila {
   cantidadDias: string;
   cantidadSemanas: string;
   precio: string;
+  etiqueta?: string;
 }
 
 export interface ClasePrecios {

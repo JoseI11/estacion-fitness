@@ -21,7 +21,8 @@ function formatPrecio(raw: string): string {
   }).format(num);
 }
 
-function etiquetaFila(cantidadDias: string, cantidadSemanas: string): string {
+function etiquetaFila(cantidadDias: string, cantidadSemanas: string, etiqueta?: string): string {
+  if (etiqueta) return etiqueta;
   if (cantidadDias) {
     return `${cantidadDias} ${cantidadDias === '1' ? 'día' : 'días'} por semana`;
   }
@@ -44,7 +45,7 @@ function ClaseCard({ clase, filas }: ClasePrecios) {
             className="flex items-center justify-between px-6 py-4 hover:bg-gray-800/50 transition-colors duration-150"
           >
             <span className="text-gray-300">
-              {etiquetaFila(fila.cantidadDias, fila.cantidadSemanas)}
+              {etiquetaFila(fila.cantidadDias, fila.cantidadSemanas, fila.etiqueta)}
             </span>
             <span className="text-xl font-bold text-[#5DD9D2]">
               {formatPrecio(fila.precio)}
@@ -119,8 +120,16 @@ export default function Precios() {
 
         {!loading && !error && clases.length > 0 && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {clases.map((c) => (
-              <ClaseCard key={c.clase} {...c} />
+            {clases.filter((c) => c.clase.trim().toLowerCase() !== 'libre').map((c) => (
+              <ClaseCard
+                key={c.clase}
+                {...c}
+                filas={
+                  c.clase === 'Funcional'
+                    ? [...c.filas, { cantidadDias: '', cantidadSemanas: '', precio: '48000', etiqueta: 'Libre' }]
+                    : c.filas
+                }
+              />
             ))}
           </div>
         )}
