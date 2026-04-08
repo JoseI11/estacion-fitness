@@ -44,4 +44,23 @@ export const actividades: Actividad[] = [
     nivel: 'Todos los niveles',
     imagen: '/actividades/personalizado.webp',
   },
+  {
+    nombre: 'Circuito Fuerza',
+    descripcion: 'Entrenamiento con el peso corporal y materiales variados. Mejorá tu fuerza, coordinación y resistencia en cada clase.',
+    nivel: 'Todos los niveles',
+    imagen: '/actividades/circuito-fuerza.webp',
+  },
+  {
+    nombre: 'Funcional Kids',
+    descripcion: 'Entrenamiento para niños que combina juegos, ejercicios de coordinación y actividades divertidas. Fomentá el amor por el movimiento desde temprana edad.',
+    nivel: 'Niños',
+    imagen: '/actividades/funcional-kids.webp',
+  },
+  {
+    nombre: 'Funcional hombres',
+    descripcion: 'Entrenamiento funcional diseñado específicamente para hombres, enfocado en desarrollar fuerza, resistencia y movilidad. Ideal para quienes buscan un entrenamiento completo y efectivo.',
+    nivel: 'Todos los niveles',
+    imagen: '/actividades/funcional-hombres.webp',
+  }
+
 ];
