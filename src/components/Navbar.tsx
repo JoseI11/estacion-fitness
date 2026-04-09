@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { siteConfig } from '../config/site';
 
 const navLinks = [
   { to: '/', label: 'Inicio' },
@@ -42,7 +43,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a
-            href="https://forms.gle/Abkf7EsW5d45QVPy8"
+            href={siteConfig.googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-5 py-2 rounded-full text-sm transition-all duration-300"
@@ -80,10 +81,10 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a
-            href="https://forms.gle/Abkf7EsW5d45QVPy8"
+            href={siteConfig.googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-5 py-3 rounded-full text-sm transition-all duration-300 text-center"
+            className="bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-5 py-3 rounded-full text-base transition-all duration-300 text-center"
             onClick={() => setIsOpen(false)}
           >
             Inscribirse

@@ -2,10 +2,9 @@ import { useEffect } from 'react';
 import { Clock, MapPin, Dumbbell, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { actividades } from '../data/actividades';
+import { buildWhatsAppUrl, siteConfig } from '../config/site';
 
-const whatsappNumber = '543764227809';
-const whatsappMessage = encodeURIComponent('Hola! Me gustaría consultar sobre más información de Estación Fitness');
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+const whatsappUrl = buildWhatsAppUrl('Hola! Me gustaría consultar sobre más información de Estación Fitness');
 
 export default function Home() {
   useEffect(() => {
@@ -26,7 +25,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center max-w-4xl mx-auto animate-fadeIn pt-32">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-white drop-shadow-lg">
             Estación Fitness, no solo somos un gym, representamos un cambio de vida.
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 drop-shadow">
@@ -42,7 +41,7 @@ export default function Home() {
               Consultar por WhatsApp
             </a>
             <a
-              href="https://forms.gle/Abkf7EsW5d45QVPy8"
+              href={siteConfig.googleFormUrl}
               className="inline-block bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
               target="_blank"
               rel="noopener noreferrer"
@@ -202,7 +201,7 @@ export default function Home() {
               Escribinos por WhatsApp
             </a>
             <a
-              href="https://forms.gle/Abkf7EsW5d45QVPy8"
+              href={siteConfig.googleFormUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block border-2 border-white hover:bg-white hover:text-black text-white font-semibold px-10 py-5 rounded-full text-xl transition-all duration-300 transform hover:scale-105"

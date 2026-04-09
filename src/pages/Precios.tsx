@@ -2,12 +2,9 @@ import { useEffect } from 'react';
 import { ArrowLeft, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { usePrices, type ClasePrecios } from '../hooks/usePrices';
+import { buildWhatsAppUrl } from '../config/site';
 
-const whatsappNumber = '543764227809';
-const whatsappMessage = encodeURIComponent(
-  'Hola! Me gustaría consultar sobre los precios de Estación Fitness',
-);
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+const whatsappUrl = buildWhatsAppUrl('Hola! Me gustaría consultar sobre los precios de Estación Fitness');
 
 /** Formatea un número crudo ("40000") como moneda argentina → "$40.000" */
 function formatPrecio(raw: string): string {
@@ -79,7 +76,7 @@ export default function Precios() {
           <div className="flex justify-center mb-6">
             <Tag className="w-12 h-12 text-[#5DD9D2]" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Precios</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Precios</h1>
           <p className="text-xl text-gray-400">
             Elegí la actividad y la frecuencia que mejor se adapte a tu ritmo.
           </p>

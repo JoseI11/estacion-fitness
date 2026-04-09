@@ -19,13 +19,13 @@ export default function Actividades() {
           Volver al inicio
         </Link>
 
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">Actividades</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Actividades</h1>
         <p className="text-xl text-gray-400 mb-16">
           Descubrí todas las disciplinas que ofrecemos en Estación Fitness.
         </p>
 
         {actividades.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {actividades.map((actividad) => (
               <div
                 key={actividad.nombre}

@@ -59,13 +59,13 @@ function ScheduleBlock({ rows }: { rows: { time: string; classes: string[] }[] }
         <tbody>
           {rows.map((row, i) => (
             <tr key={i} className={i % 2 === 0 ? 'bg-blue-800' : 'bg-blue-800'}>
-              <td className="px-3 py-2 text-white font-bold text-xs text-center whitespace-nowrap bg-blue-700 border border-blue-950">
+              <td className="px-3 py-2 text-white font-bold text-xs md:text-sm text-center whitespace-nowrap bg-blue-700 border border-blue-950">
                 {row.time}
               </td>
               {row.classes.map((cls, j) => (
                 <td
                   key={j}
-                  className={`px-2 py-2 text-xs text-center font-semibold border border-blue-950 ${
+                  className={`px-2 py-2 text-xs md:text-sm text-center font-semibold border border-blue-950 ${
                     cls
                       ? 'bg-cyan-200 text-blue-900'
                       : 'bg-blue-800'
@@ -79,6 +79,7 @@ function ScheduleBlock({ rows }: { rows: { time: string; classes: string[] }[] }
         </tbody>
       </table>
     </div>
+
   );
 }
 

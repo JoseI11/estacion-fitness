@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, UserCircle2 } from 'lucide-react';
+import { ArrowLeft, UserCircle2, Instagram } from 'lucide-react';
 import { profesores } from '../data/profesores';
 
 export default function ProfesorDetalle() {
@@ -41,7 +41,7 @@ export default function ProfesorDetalle() {
 
         <div className="flex flex-col items-center text-center gap-8">
           {/* Foto circular */}
-          <div className="w-48 h-48 md:w-80 md:h-80 rounded-full overflow-hidden ring-4 ring-[#5DD9D2]">
+          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden ring-4 ring-[#5DD9D2]">
             {profe.foto ? (
               <img
                 src={profe.foto}
@@ -57,19 +57,25 @@ export default function ProfesorDetalle() {
           </div>
 
           {/* Nombre */}
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-3">{profe.nombre}</h1>
+          <div className="flex flex-col items-center gap-3">
+            <h1 className="text-4xl md:text-5xl font-bold">{profe.nombre}</h1>
             <span className="inline-block text-sm font-semibold uppercase tracking-widest text-[#5DD9D2] bg-[#5DD9D2]/10 px-4 py-1.5 rounded-full">
               {profe.especialidad}
             </span>
+
+            {profe.enlace_instagram && (
+              <a
+                href={profe.enlace_instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-5 text-gray-300 hover:text-[#5DD9D2] transition-colors duration-200"
+              >
+                <Instagram className="w-5 h-5 md:w-7 md:h-7" />
+                <span className="text-sm md:text-base font-medium">Instagram</span>
+              </a>
+            )}
           </div>
 
-          {/* Bio */}
-          {profe.bio && (
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-lg">
-              {profe.bio}
-            </p>
-          )}
         </div>
       </div>
     </div>

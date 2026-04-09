@@ -23,7 +23,7 @@ export default function Horarios() {
           <div className="flex justify-center mb-6">
             <Clock className="w-12 h-12 text-[#5DD9D2]" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Horarios de clases</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Horarios de clases</h1>
           <p className="text-xl text-gray-400">
             Encontrá el turno que mejor se adapte a tu rutina.
           </p>

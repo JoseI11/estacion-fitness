@@ -19,7 +19,7 @@ export default function Profesores() {
           Volver al inicio
         </Link>
 
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">Nuestro equipo</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Nuestro equipo</h1>
         <p className="text-xl text-gray-400 mb-16">
           Conocé a los profesionales que te van a acompañar en cada entrenamiento.
         </p>
@@ -45,7 +45,7 @@ export default function Profesores() {
                   </div>
                 )}
               </div>
-              <p className="text-sm font-bold uppercase tracking-widest text-center text-gray-200 group-hover:text-[#5DD9D2] transition-colors duration-300">
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest text-center text-gray-200 group-hover:text-[#5DD9D2] transition-colors duration-300">
                 {profe.nombre}
               </p>
             </Link>
