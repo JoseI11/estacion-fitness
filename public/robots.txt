@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Reemplazar con tu dominio real antes de publicar:
 Sitemap: https://www.tudominio.com/sitemap.xml

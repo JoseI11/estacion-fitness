@@ -1,15 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import { Phone, MapPin } from 'lucide-react';
+import { buildWhatsAppUrl, siteConfig } from '../config/site';
 
 const navLinks = [
   { to: '/',           label: 'Inicio' },
   { to: '/actividades', label: 'Actividades' },
   { to: '/profesores',  label: 'Profesores' },
   { to: '/horarios',    label: 'Horarios' },
+  { to: '/precios',     label: 'Precios' },
 ];
 
-const whatsappNumber = '5491112345678';
-const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+const whatsappUrl = buildWhatsAppUrl();
 
 export default function Footer() {
   return (
@@ -60,7 +61,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 mt-0.5 text-[#5DD9D2] shrink-0" />
-              <span>Dante Alghieri 715, Rafaela, Santa Fe</span>
+              <span>{`${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.region}`}</span>
             </li>
           </ul>
 
@@ -68,7 +69,7 @@ export default function Footer() {
           <div className="flex gap-3 mt-8">
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/estacion_fitness_/"
+              href={siteConfig.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -81,7 +82,7 @@ export default function Footer() {
 
             {/* TikTok */}
             <a
-              href="https://www.tiktok.com/@estacionfitnes22"
+              href={siteConfig.tikTokUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
