@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Una vez deployado, descomentar y reemplazar con tu dominio real:
-# Sitemap: https://www.tudominio.com/sitemap.xml
+Sitemap: https://www.tudominio.com/sitemap.xml

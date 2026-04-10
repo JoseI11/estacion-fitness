@@ -1,5 +1,17 @@
 const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
+const funcionalLibreSchedule = [
+  { time: '6:30',   classes: ['', 'Funcional', '', 'Funcional', ''] },
+  { time: '7:30',   classes: ['Funcional', 'Funcional', 'Funcional', 'Funcional', 'Funcional'] },
+  { time: '9:00',   classes: ['Funcional', 'Funcional', 'Funcional', 'Funcional', 'Funcional'] },
+  { time: '13:00',  classes: ['', 'Funcional', '', 'Funcional', ''] },
+  { time: '15:00',  classes: ['', 'Funcional', '', 'Funcional', ''] },
+  { time: '16:00',  classes: ['Funcional', 'Funcional', 'Funcional', 'Funcional', 'Funcional'] },
+  { time: '17:00',  classes: ['Funcional', '', 'Funcional', '', 'Funcional'] },
+  { time: '19:00',  classes: ['Funcional', 'Funcional', 'Funcional', 'Funcional', ''] },
+  { time: '20:00',  classes: ['Funcional', '', 'Funcional', '', ''] },
+];
+
 const morningSchedule = [
   { time: '6:00 a 11:00', classes: ['Personalizado', 'Personalizado', 'Personalizado', 'Personalizado', 'Personalizado'] },
   { time: '6:30',         classes: ['', 'Funcional', '', 'Funcional', ''] },
@@ -47,13 +59,13 @@ function ScheduleBlock({ rows }: { rows: { time: string; classes: string[] }[] }
         <tbody>
           {rows.map((row, i) => (
             <tr key={i} className={i % 2 === 0 ? 'bg-blue-800' : 'bg-blue-800'}>
-              <td className="px-3 py-2 text-white font-bold text-xs text-center whitespace-nowrap bg-blue-700 border border-blue-950">
+              <td className="px-3 py-2 text-white font-bold text-xs md:text-sm text-center whitespace-nowrap bg-blue-700 border border-blue-950">
                 {row.time}
               </td>
               {row.classes.map((cls, j) => (
                 <td
                   key={j}
-                  className={`px-2 py-2 text-xs text-center font-semibold border border-blue-950 ${
+                  className={`px-2 py-2 text-xs md:text-sm text-center font-semibold border border-blue-950 ${
                     cls
                       ? 'bg-cyan-200 text-blue-900'
                       : 'bg-blue-800'
@@ -67,14 +79,24 @@ function ScheduleBlock({ rows }: { rows: { time: string; classes: string[] }[] }
         </tbody>
       </table>
     </div>
+
   );
 }
 
 export default function ScheduleTable() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <ScheduleBlock rows={morningSchedule} />
       <ScheduleBlock rows={afternoonSchedule} />
+
+      <div className="space-y-4">
+        <div className="text-center py-4 rounded-2xl bg-black border border-[#5DD9D2]/40">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-widest text-[#5DD9D2] uppercase">
+            Funcional Libre
+          </h2>
+        </div>
+        <ScheduleBlock rows={funcionalLibreSchedule} />
+      </div>
     </div>
   );
 }

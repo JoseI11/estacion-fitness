@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { siteConfig } from '../config/site';
 
 const navLinks = [
   { to: '/', label: 'Inicio' },
   { to: '/actividades', label: 'Actividades' },
   { to: '/profesores', label: 'Profesores' },
   { to: '/horarios', label: 'Horarios' },
+  { to: '/precios', label: 'Precios' },
 ];
 
 export default function Navbar() {
@@ -17,14 +19,11 @@ export default function Navbar() {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo — sirve WebP si el navegador lo soporta, JPG como fallback */}
         <NavLink to="/" onClick={() => setIsOpen(false)}>
-          <picture>
-            <source srcSet="/553575470_18014144180788369_4726206880901932308_n.webp" type="image/webp" />
-            <img
-              src="/553575470_18014144180788369_4726206880901932308_n.jpg"
-              alt="Estación Fitness Logo"
-              className="h-16 sm:h-20 object-contain"
-            />
-          </picture>
+          <img
+            src="/logo_estacion.webp"
+            alt="Estación Fitness Logo"
+            className="h-16 sm:h-20 md:h-[5.25rem] object-contain mix-blend-screen"
+          />
         </NavLink>
 
         {/* Desktop nav */}
@@ -44,7 +43,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdtpcfoRnSXF1GhxsTrElYOwa-xjndvJfL2YdNJioV8WH_Myg/viewform?usp=dialog"
+            href={siteConfig.googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-5 py-2 rounded-full text-sm transition-all duration-300"
@@ -82,10 +81,10 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdtpcfoRnSXF1GhxsTrElYOwa-xjndvJfL2YdNJioV8WH_Myg/viewform?usp=dialog"
+            href={siteConfig.googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-5 py-3 rounded-full text-sm transition-all duration-300 text-center"
+            className="bg-[#5DD9D2] hover:bg-[#4EC9C2] text-black font-semibold px-5 py-3 rounded-full text-base transition-all duration-300 text-center"
             onClick={() => setIsOpen(false)}
           >
             Inscribirse
