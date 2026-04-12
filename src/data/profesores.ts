@@ -33,13 +33,6 @@ export const profesores: Profesor [] = [
     foto: '/profesores/profe-flavia.webp',
   },
   {
-    slug: 'carlos-villaruel',
-    nombre: 'Carlos Villaruel',
-    especialidad: 'Profesor de jumping',
-    enlace_instagram:'https://www.instagram.com/jumpersfitrafaela/',
-    foto: '/profesores/profe-carlos.webp',
-  },
-  {
     slug: 'emanuel-anrique',
     nombre: 'Emanuel Anrique',
     especialidad: 'Tecnico en entrenamiento deportivo',
