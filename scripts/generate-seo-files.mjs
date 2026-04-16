@@ -3,7 +3,6 @@ import path from 'node:path';
 
 const rootDir = process.cwd();
 const publicDir = path.join(rootDir, 'public');
-const fallbackSiteUrl = 'https://www.tudominio.com';
 const envFiles = ['.env', '.env.local', '.env.production', '.env.production.local'];
 
 function loadEnvFile(filePath) {
@@ -37,7 +36,11 @@ for (const envFile of envFiles) {
   loadEnvFile(path.join(rootDir, envFile));
 }
 
-const siteUrl = (process.env.VITE_SITE_URL || fallbackSiteUrl).replace(/\/+$/, '');
+if (!process.env.VITE_SITE_URL) {
+  throw new Error('Falta VITE_SITE_URL en .env');
+}
+
+const siteUrl = process.env.VITE_SITE_URL.replace(/\/+$/, '');
 
 const routes = [
   { path: '/', changefreq: 'monthly', priority: '1.0' },
@@ -80,3 +83,13 @@ Sitemap: ${siteUrl}/sitemap.xml
 
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf8');
 fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt, 'utf8');
+
+// === Reemplazo de %SITE_URL% en index.html ===
+const indexPath = path.join(rootDir, 'index.html');
+
+if (fs.existsSync(indexPath)) {
+  let html = fs.readFileSync(indexPath, 'utf8');
+  html = html.replaceAll('%SITE_URL%', siteUrl);
+  fs.writeFileSync(indexPath, html, 'utf8');
+  console.log('✅ index.html actualizado con SITE_URL');
+}

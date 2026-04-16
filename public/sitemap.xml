@@ -26,7 +26,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tudominio.com/profesores/soledad-cristaldo</loc>
+    <loc>https://www.tudominio.com/profesores/soledad-cristald</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -37,11 +37,6 @@
   </url>
   <url>
     <loc>https://www.tudominio.com/profesores/flavia-morello</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.tudominio.com/profesores/carlos-villaruel</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

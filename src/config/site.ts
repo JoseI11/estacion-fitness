@@ -27,7 +27,7 @@ export const siteConfig = {
     region: 'Santa Fe',
     country: 'AR',
   },
-  ogImagePath: '/wmremove-transformed.jpeg',
+  ogImagePath: '/entrenamiento-estacion.jpeg',
 };
 
 export function buildWhatsAppUrl(message?: string): string {
