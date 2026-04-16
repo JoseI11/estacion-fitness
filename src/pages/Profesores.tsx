@@ -38,6 +38,7 @@ export default function Profesores() {
                     alt={profe.nombre}
                     className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-500"
                     style={profe.fotoPosition ? { objectPosition: profe.fotoPosition } : undefined}
+                    loading="lazy"
                   />
                 ) : (
                   <div className="w-full h-full bg-gray-800 flex items-center justify-center">

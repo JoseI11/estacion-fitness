@@ -36,6 +36,7 @@ export default function Actividades() {
                     src={actividad.imagen}
                     alt={actividad.nombre}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6">

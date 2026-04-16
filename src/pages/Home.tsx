@@ -61,6 +61,7 @@ export default function Home() {
                 src="/sobre-nosotros.webp"
                 alt="Entrenamiento en Estación Fitness"
                 className="w-full h-72 md:h-[420px] object-cover rounded-3xl shadow-2xl shadow-black/60"
+                loading="lazy"
               />
             </div>
             <div className="w-full md:w-1/2 text-center md:text-left animate-fadeIn">
@@ -105,6 +106,7 @@ export default function Home() {
                     src={actividad.imagen}
                     alt={actividad.nombre}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-4 text-center">
