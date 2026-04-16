@@ -1,4 +1,4 @@
-const fallbackSiteUrl = 'https://www.tudominio.com';
+const fallbackSiteUrl = 'https://www.estacionfitness.com';
 const fallbackPhone = '543764227809';
 const fallbackFormUrl = 'https://forms.gle/Abkf7EsW5d45QVPy8';
 const fallbackInstagramUrl = 'https://www.instagram.com/estacion_fitness_/';

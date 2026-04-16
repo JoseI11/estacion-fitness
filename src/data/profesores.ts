@@ -11,8 +11,8 @@ export interface Profesor {
 
 export const profesores: Profesor [] = [
   {
-    slug: 'soledad-cristald',
-    nombre: 'Soledad Cristald',
+    slug: 'soledad-cristaldo',
+    nombre: 'Soledad Cristaldo',
     especialidad: 'Profesora en tecnicas de gimnasia',
     enlace_instagram:'https://www.instagram.com/sole_cristald/',
     foto: '/profesores/profe-soledad.webp',
