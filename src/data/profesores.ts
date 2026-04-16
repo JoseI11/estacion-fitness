@@ -11,8 +11,8 @@ export interface Profesor {
 
 export const profesores: Profesor [] = [
   {
-    slug: 'soledad-cristald',
-    nombre: 'Soledad Cristald',
+    slug: 'soledad-cristaldo',
+    nombre: 'Soledad Cristaldo',
     especialidad: 'Profesora en tecnicas de gimnasia',
     enlace_instagram:'https://www.instagram.com/sole_cristald/',
     foto: '/profesores/profe-soledad.webp',
@@ -31,13 +31,6 @@ export const profesores: Profesor [] = [
     especialidad: 'Coach nivel 1 de Cross/preparadora física',
     enlace_instagram:'https://www.instagram.com/morelloflavia/',
     foto: '/profesores/profe-flavia.webp',
-  },
-  {
-    slug: 'carlos-villaruel',
-    nombre: 'Carlos Villaruel',
-    especialidad: 'Profesor de jumping',
-    enlace_instagram:'https://www.instagram.com/jumpersfitrafaela/',
-    foto: '/profesores/profe-carlos.webp',
   },
   {
     slug: 'emanuel-anrique',

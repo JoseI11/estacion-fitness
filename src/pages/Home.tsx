@@ -61,13 +61,17 @@ export default function Home() {
                 src="/sobre-nosotros.webp"
                 alt="Entrenamiento en Estación Fitness"
                 className="w-full h-72 md:h-[420px] object-cover rounded-3xl shadow-2xl shadow-black/60"
+                loading="lazy"
               />
             </div>
             <div className="w-full md:w-1/2 text-center md:text-left animate-fadeIn">
               <div className="flex justify-center md:justify-start mb-6">
                 <Dumbbell className="w-10 h-10 text-[#5DD9D2]" />
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre nosotros</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-3">Sobre nosotros</h2>
+              <p className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase mb-6">
+                SOMOS <span className="text-[#5DD9D2]">ENERGÍA</span> SOMOS ESTACION
+              </p>
               <div className="space-y-5 text-lg md:text-xl text-gray-300 leading-relaxed">
                 <p>
                   En Estación Fitness creemos que entrenar va mucho más allá de lo físico. Somos un espacio donde cada persona viene a superarse, a desconectar del día a día y a reconectar con su mejor versión.
@@ -102,6 +106,7 @@ export default function Home() {
                     src={actividad.imagen}
                     alt={actividad.nombre}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-4 text-center">

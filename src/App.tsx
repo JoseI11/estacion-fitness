@@ -17,6 +17,7 @@ import Profesores from './pages/Profesores';
 import ProfesorDetalle from './pages/ProfesorDetalle';
 import Horarios from './pages/Horarios';
 import Precios from './pages/Precios';
+import NotFound from './pages/NotFound';
 import { buildWhatsAppUrl } from './config/site';
 
 const whatsappUrl = buildWhatsAppUrl('Hola! Me gustaria consultar sobre los planes de Estación Fitness');
@@ -33,6 +34,7 @@ function App() {
         <Route path="/profesores/:slug" element={<ProfesorDetalle />} />
         <Route path="/horarios" element={<Horarios />} />
         <Route path="/precios" element={<Precios />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       {/* Boton flotante de WhatsApp — visible en todas las paginas */}

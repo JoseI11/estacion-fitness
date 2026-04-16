@@ -20,7 +20,7 @@ const publicDir = './public';
 // [subcarpeta o '' para raíz, archivo original, calidad]
 const images = [
   // Imágenes generales
-  ['',             'wmremove-transformed.jpeg',                             82],
+  ['',             'entrenamiento-estacion.jpeg',                            82],
   ['',             '553575470_18014144180788369_4726206880901932308_n.jpg', 85],
   ['',             'horarios.png',                                          90],
 

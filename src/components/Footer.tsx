@@ -24,6 +24,7 @@ export default function Footer() {
             src="/logo_estacion.webp"
             alt="Estación Fitness"
             className="h-16 object-contain self-start mix-blend-screen"
+            loading="lazy"
           />
           <p className="text-sm leading-relaxed">
             Tu espacio para entrenar, superarte y conectar con tu mejor versión. Rafaela, Santa Fe.

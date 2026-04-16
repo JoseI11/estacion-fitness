@@ -32,12 +32,7 @@ export const actividades: Actividad[] = [
     nivel: 'Todos los niveles',
     imagen: '/actividades/baile-fit.webp',
   },
-  {
-    nombre: 'Jumping',
-    descripcion: 'Saltá al ritmo de la música sobre mini trampolines. Una clase divertida, de bajo impacto y alto rendimiento cardiovascular.',
-    nivel: 'Todos los niveles',
-    imagen: '/actividades/jumping.webp',
-  },
+
   {
     nombre: 'Personalizado',
     descripcion: 'Entrenamiento adaptado a tus objetivos específicos con seguimiento individual. La opción ideal para resultados concretos.',
