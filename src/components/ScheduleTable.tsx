@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
 const funcionalLibreSchedule = [
@@ -41,46 +43,99 @@ const afternoonSchedule = [
 ];
 
 function ScheduleBlock({ rows }: { rows: { time: string; classes: string[] }[] }) {
+  const [selectedDay, setSelectedDay] = useState(0);
+
   return (
-    <div className="overflow-x-auto rounded-2xl shadow-xl shadow-black/40">
-      <table className="w-full min-w-[560px] border-collapse">
-        <thead>
-          <tr className="bg-blue-900">
-            <th className="px-3 py-2 text-white font-bold text-sm uppercase tracking-widest text-center w-28 border border-blue-950" />
-            {days.map((day) => (
-              <th
-                key={day}
-                className="px-3 py-2 text-white font-bold text-sm uppercase tracking-wider text-center border border-blue-950"
-              >
-                {day}
+    <div className="rounded-2xl shadow-xl shadow-black/40">
+
+      {/* Mobile: day selector + single column */}
+      <div className="md:hidden">
+        <div className="flex gap-1 mb-2 overflow-x-auto pb-1">
+          {days.map((day, i) => (
+            <button
+              key={day}
+              onClick={() => setSelectedDay(i)}
+              className={`flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-colors ${
+                selectedDay === i
+                  ? 'bg-[#5DD9D2] text-blue-900'
+                  : 'bg-blue-800 text-white hover:bg-blue-700'
+              }`}
+            >
+              {day}
+            </button>
+          ))}
+        </div>
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="bg-blue-900">
+              <th className="px-3 py-2 text-white font-bold text-xs uppercase tracking-widest text-center border border-blue-950 w-28" />
+              <th className="px-3 py-2 text-white font-bold text-xs uppercase tracking-wider text-center border border-blue-950">
+                {days[selectedDay]}
               </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, i) => (
-            <tr key={i} className={i % 2 === 0 ? 'bg-blue-800' : 'bg-blue-800'}>
-              <td className="px-3 py-2 text-white font-bold text-xs md:text-sm text-center whitespace-nowrap bg-blue-700 border border-blue-950">
-                {row.time}
-              </td>
-              {row.classes.map((cls, j) => (
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr key={i} className="bg-blue-800">
+                <td className="px-3 py-2 text-white font-bold text-xs text-center whitespace-nowrap bg-blue-700 border border-blue-950">
+                  {row.time}
+                </td>
                 <td
-                  key={j}
-                  className={`px-2 py-2 text-xs md:text-sm text-center font-semibold border border-blue-950 ${
-                    cls
+                  className={`px-2 py-2 text-xs text-center font-semibold border border-blue-950 ${
+                    row.classes[selectedDay]
                       ? 'bg-cyan-200 text-blue-900'
                       : 'bg-blue-800'
                   }`}
                 >
-                  {cls}
+                  {row.classes[selectedDay]}
                 </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Desktop: full table */}
+      <div className="hidden md:block overflow-x-auto">
+        <table className="w-full min-w-[560px] border-collapse">
+          <thead>
+            <tr className="bg-blue-900">
+              <th className="px-3 py-2 text-white font-bold text-sm uppercase tracking-widest text-center w-28 border border-blue-950" />
+              {days.map((day) => (
+                <th
+                  key={day}
+                  className="px-3 py-2 text-white font-bold text-sm uppercase tracking-wider text-center border border-blue-950"
+                >
+                  {day}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {rows.map((row, i) => (
+              <tr key={i} className="bg-blue-800">
+                <td className="px-3 py-2 text-white font-bold text-xs md:text-sm text-center whitespace-nowrap bg-blue-700 border border-blue-950">
+                  {row.time}
+                </td>
+                {row.classes.map((cls, j) => (
+                  <td
+                    key={j}
+                    className={`px-2 py-2 text-xs md:text-sm text-center font-semibold border border-blue-950 ${
+                      cls
+                        ? 'bg-cyan-200 text-blue-900'
+                        : 'bg-blue-800'
+                    }`}
+                  >
+                    {cls}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
+    </div>
   );
 }
 
