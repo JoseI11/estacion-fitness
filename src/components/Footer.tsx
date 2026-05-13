@@ -16,14 +16,14 @@ export default function Footer() {
   return (
     <footer className="bg-gray-950 border-t border-gray-800 text-gray-400">
       {/* Cuerpo principal */}
-      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
 
         {/* Logo + descripción */}
         <div className="flex flex-col gap-4">
           <img
             src="/logo_estacion.webp"
             alt="Estación Fitness"
-            className="h-16 object-contain self-start mix-blend-screen"
+            className="h-16 object-contain self-center md:self-start mix-blend-screen"
             loading="lazy"
           />
           <p className="text-sm leading-relaxed">
@@ -54,20 +54,20 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Contacto</h3>
           <ul className="space-y-4 text-sm">
-            <li className="flex items-start gap-3">
+            <li className="flex items-start gap-3 justify-center md:justify-start">
               <Phone className="w-4 h-4 mt-0.5 text-[#5DD9D2] shrink-0" />
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#5DD9D2] transition-colors duration-200">
                 Escribinos por WhatsApp
               </a>
             </li>
-            <li className="flex items-start gap-3">
+            <li className="flex items-start gap-3 justify-center md:justify-start">
               <MapPin className="w-4 h-4 mt-0.5 text-[#5DD9D2] shrink-0" />
               <span>{`${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.region}`}</span>
             </li>
           </ul>
 
           {/* Redes sociales */}
-          <div className="flex gap-3 mt-8">
+          <div className="flex gap-3 mt-8 justify-center md:justify-start">
             {/* Instagram */}
             <a
               href={siteConfig.instagramUrl}
