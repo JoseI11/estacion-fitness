@@ -4,8 +4,15 @@ Solución para digitalizar la gestión administrativa de un gimnasio local de Ra
 
 **Demo:** [www.estacionfitness.com](https://www.estacionfitness.com)
 **Período:** marzo 2026 – abril 2026 · **Tipo:** proyecto freelance
+ 
+### Capturas del sitio
 
-![Captura del sitio](./docs/captura-sitio.png)
+<img width="2221" height="1100" alt="FireShot Capture 004 - Estación Fitness - Entrená en Rafaela -  www estacionfitness com" src="https://github.com/user-attachments/assets/4ba53c09-dcb1-4816-a782-b460bfdd0bd5" />
+<br>
+<img width="2221" height="1100" alt="FireShot Capture 005 - Formulario alumnos Estación Fitness -  docs google com" src="https://github.com/user-attachments/assets/6432192f-4b23-4d68-9d42-33dc6782b7d0" />
+<br>
+<img width="2331" height="1100" alt="FireShot Capture 006 - Precios - Estación Fitness -  www estacionfitness com" src="https://github.com/user-attachments/assets/f2facb6b-65ba-4368-bebd-5a92cca25709" />
+
 <!-- Reemplazá por una captura real. Si muestra datos de alumnos, anonimizalos o usá datos de prueba. -->
 
 ---
